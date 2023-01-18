@@ -11,6 +11,7 @@ const setupInput = function (conn) {
 };
 
 const handleUserInput = function (key) {
+  const response1 = "Hi Everyone!"
   if (key === '\u0003') {
     process.exit();
   }
@@ -25,6 +26,9 @@ const handleUserInput = function (key) {
   }
   if (key === 'd') {
     connection.write("Move: right");
+  }
+  if (key === 'h') {
+    connection.write("Say: Hi Everyone!");
   }
 };
 
