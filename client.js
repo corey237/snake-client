@@ -1,12 +1,12 @@
 const net = require("net");
+const { IP, PORT } = require("./constants.js");
 const connect = function () {
   const conn = net.createConnection({
-    host: "localhost",
-    port: 50541
+    ip: IP,
+    port: PORT
   })
 
   conn.setEncoding("utf8");
-  //conn.write("Move: up");
 
   conn.on("data", (data) => {
   console.log(data)
@@ -19,24 +19,9 @@ const connect = function () {
   setTimeout(() => {
     conn.write("Name: CS"), 3000
   })
-  
-  // setTimeout( () => {
-  //   conn.write("Move: up");
-  // }, 6000);
-
-  // setTimeout( () => {
-  //   conn.write("Move: left");
-  // }, 9000);
-
-
-
   return conn;
 }
 
 module.exports = {
   connect
 }
-
-
-// console.log("Connecting ...");
-// connect();
