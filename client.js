@@ -5,11 +5,18 @@ const connect = function () {
     port: 50541
   })
 
+  conn.write("Name: CS");
   conn.setEncoding("utf8");
 
   conn.on("data", (data) => {
   console.log(data)
   });
+
+  conn.on("connect", (data) => {
+    console.log("Connection has been successfully established.");
+  })
+
+
 
   return conn;
 }
@@ -19,5 +26,5 @@ module.exports = {
 }
 
 
-// console.log("Connecting ...");
-// connect();
+console.log("Connecting ...");
+connect();
