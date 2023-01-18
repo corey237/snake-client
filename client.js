@@ -5,8 +5,8 @@ const connect = function () {
     port: 50541
   })
 
-  conn.write("Name: CS");
   conn.setEncoding("utf8");
+  //conn.write("Move: up");
 
   conn.on("data", (data) => {
   console.log(data)
@@ -15,6 +15,18 @@ const connect = function () {
   conn.on("connect", (data) => {
     console.log("Connection has been successfully established.");
   })
+
+  setTimeout(() => {
+    conn.write("Name: CS"), 3000
+  })
+  
+  // setTimeout( () => {
+  //   conn.write("Move: up");
+  // }, 6000);
+
+  // setTimeout( () => {
+  //   conn.write("Move: left");
+  // }, 9000);
 
 
 
